@@ -20,4 +20,5 @@ for x in pets:
     else:
         print(x["name"] + ' is not my pet')
 
-
+print(dogs)
+print(fish)
