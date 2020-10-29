@@ -1,0 +1,4 @@
+- name: run show version
+  cli_command:
+    command: show version
+  register: result

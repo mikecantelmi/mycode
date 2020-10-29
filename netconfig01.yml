@@ -1,0 +1,12 @@
+---
+- name: Playbook challenge 2
+  hosts: ~^arista
+
+  tasks:
+    - name: Get version
+      import_role:
+        name: show_version
+
+    - name: print version
+      debug:
+        var: result
