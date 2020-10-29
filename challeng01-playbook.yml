@@ -1,0 +1,15 @@
+---
+- name: Challenge_1_Playbook
+  hosts: planet_express
+
+  vars_prompt:
+    - name: "yourapt"
+      prompt: "Please enter the application to install."
+      private: no
+      
+  tasks:
+    - name: "apt module - Install"
+      apt:
+        name: "{{ yourapt }}"
+        state: present
+      become: true
