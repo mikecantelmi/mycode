@@ -26,17 +26,17 @@ echo "Building lab..."
 sudo docker network create --opt com.docker.network.driver.mtu=1450 --subnet 10.10.2.0/24 ansible-net
 
 # Failback
-sudo docker build -q --build-arg user=bender     --tag ssh-bender     $HOME/.config/dockerfiles/ansible/ssh-ks
-sudo docker build -q --build-arg user=fry        --tag ssh-fry        $HOME/.config/dockerfiles/ansible/ssh-ks
-sudo docker build -q --build-arg user=zoidberg   --tag ssh-zoidberg   $HOME/.config/dockerfiles/ansible/ssh-ks
-sudo docker build -q --build-arg user=farnsworth --tag ssh-farnsworth $HOME/.config/dockerfiles/ansible/ssh-centos
+#sudo docker build -q --build-arg user=bender     --tag ssh-bender     $HOME/.config/dockerfiles/ansible/ssh-ks
+#sudo docker build -q --build-arg user=fry        --tag ssh-fry        $HOME/.config/dockerfiles/ansible/ssh-ks
+#sudo docker build -q --build-arg user=zoidberg   --tag ssh-zoidberg   $HOME/.config/dockerfiles/ansible/ssh-ks
+#sudo docker build -q --build-arg user=farnsworth --tag ssh-farnsworth $HOME/.config/dockerfiles/ansible/ssh-centos
 
 FILE_PATH=$HOME/.config/dockerfiles/ansible
 
-#sudo docker image load -i $FILE_PATH/ssh-bender.tar
-#sudo docker image load -i $FILE_PATH/ssh-fry.tar
-#sudo docker image load -i $FILE_PATH/ssh-zoidberg.tar
-#sudo docker image load -i $FILE_PATH/ssh-farnsworth.tar
+sudo docker image load -i $FILE_PATH/ssh-bender.tar
+sudo docker image load -i $FILE_PATH/ssh-fry.tar
+sudo docker image load -i $FILE_PATH/ssh-zoidberg.tar
+sudo docker image load -i $FILE_PATH/ssh-farnsworth.tar
 
 
 ### Launch containers and connect networks
